@@ -26,47 +26,87 @@
 
     <main>
         <section class="hero">
-            <h1>画像を瞬時に圧縮</h1>
-            <p class="tagline">シンプルで高速な画像圧縮アプリ<br>ドラッグ&ドロップで簡単圧縮。JPEG、PNG、HEIC、WebP対応。</p>
-            <div class="cta">
-                <!-- App Store badge will be added after release -->
+            <h1 class="animate-in">画像を瞬時に圧縮</h1>
+            <p class="tagline animate-in delay-1">シンプルで高速な画像圧縮アプリ<br>ドラッグ&ドロップで簡単圧縮。JPEG、PNG、HEIC、WebP対応。</p>
+            <div class="cta animate-in delay-2">
                 <a href="#" class="app-store-badge">
                     <img src="../images/appstore.svg" alt="App Storeからダウンロード">
                 </a>
             </div>
-            <p class="requirements">macOS 13.0 Ventura以降が必要です</p>
+            <p class="requirements animate-in delay-3">macOS 13.0 Ventura以降が必要です</p>
         </section>
 
         <section id="features" class="features">
             <h2>機能</h2>
+            <p class="features-subtitle">画像圧縮に必要なすべてが揃っています</p>
             <div class="feature-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🖱️</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </div>
                     <h3>ドラッグ&ドロップ</h3>
                     <p>画像をドロップするだけで瞬時に圧縮</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🖼️</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <polyline points="21 15 16 10 5 21"/>
+                        </svg>
+                    </div>
                     <h3>複数フォーマット対応</h3>
                     <p>JPEG、PNG、HEIC、WebP形式に対応</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🎚️</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="4" y1="21" x2="4" y2="14"/>
+                            <line x1="4" y1="10" x2="4" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12" y2="3"/>
+                            <line x1="20" y1="21" x2="20" y2="16"/>
+                            <line x1="20" y1="12" x2="20" y2="3"/>
+                            <line x1="1" y1="14" x2="7" y2="14"/>
+                            <line x1="9" y1="8" x2="15" y2="8"/>
+                            <line x1="17" y1="16" x2="23" y2="16"/>
+                        </svg>
+                    </div>
                     <h3>品質調整</h3>
                     <p>50%〜100%の範囲で圧縮品質を調整可能</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📷</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
+                            <circle cx="12" cy="13" r="3"/>
+                        </svg>
+                    </div>
                     <h3>メタデータ保持</h3>
                     <p>EXIFやGPS情報を保持するオプション</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📍</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
                     <h3>メニューバー常駐</h3>
                     <p>メニューバーに常駐し、いつでもすぐに使える</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                    </div>
                     <h3>プライバシー重視</h3>
                     <p>100%ローカル処理。画像がMacから外に出ることはありません</p>
                 </div>
@@ -76,26 +116,46 @@
         <section id="pro" class="pro">
             <h2>SquishPic Pro</h2>
             <p class="pro-tagline">プロフェッショナル向けの強力な機能を解放</p>
-            <div class="price-badge">¥800 <span>買い切り</span></div>
+            <div class="price-badge">¥800<span>買い切り</span></div>
             <div class="pro-features">
                 <div class="pro-feature">
-                    <span class="check">✓</span>
+                    <span class="check">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </span>
                     <span>一括処理 - 複数ファイルをまとめて圧縮</span>
                 </div>
                 <div class="pro-feature">
-                    <span class="check">✓</span>
+                    <span class="check">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </span>
                     <span>フォルダドロップ - フォルダごとドラッグして圧縮</span>
                 </div>
                 <div class="pro-feature">
-                    <span class="check">✓</span>
+                    <span class="check">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </span>
                     <span>進捗表示 - 残り時間付きプログレスバー</span>
                 </div>
                 <div class="pro-feature">
-                    <span class="check">✓</span>
+                    <span class="check">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </span>
                     <span>サブフォルダ構造維持</span>
                 </div>
                 <div class="pro-feature">
-                    <span class="check">✓</span>
+                    <span class="check">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </span>
                     <span>Finder Quick Action - 右クリックで圧縮</span>
                 </div>
             </div>
@@ -103,6 +163,7 @@
 
         <section class="screenshot">
             <h2>シンプル&クリーンなインターフェース</h2>
+            <p class="screenshot-subtitle">効率を追求したデザイン</p>
             <div class="screenshot-container">
                 <img src="../images/screenshot1.png" alt="SquishPic スクリーンショット" class="screenshot-img">
             </div>
