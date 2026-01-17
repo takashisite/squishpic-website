@@ -164,8 +164,80 @@
         <section class="screenshot">
             <h2>シンプル&クリーンなインターフェース</h2>
             <p class="screenshot-subtitle">効率を追求したデザイン</p>
-            <div class="screenshot-container">
-                <img src="../images/screenshot1.png" alt="SquishPic スクリーンショット" class="screenshot-img">
+            <div class="scroll-hint">
+                <span>スワイプして表示</span>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </div>
+            <div class="screenshot-gallery-wrapper">
+                <button class="screenshot-nav prev" aria-label="前へ">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <button class="screenshot-nav next" aria-label="次へ">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+                <div class="screenshot-gallery">
+                    <div class="screenshot-card">
+                        <div class="screenshot-card-inner">
+                            <div class="screenshot-image-wrapper">
+                                <img src="../images/screenshots/1.png" alt="ドロップゾーン">
+                            </div>
+                            <div class="screenshot-caption">
+                                <h3>ドラッグ&ドロップ</h3>
+                                <p>画像を落とすだけで瞬時に圧縮</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screenshot-card">
+                        <div class="screenshot-card-inner">
+                            <div class="screenshot-image-wrapper">
+                                <img src="../images/screenshots/2.png" alt="圧縮結果">
+                            </div>
+                            <div class="screenshot-caption">
+                                <h3>圧縮結果</h3>
+                                <p>ファイルサイズの削減を一目で確認</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screenshot-card">
+                        <div class="screenshot-card-inner">
+                            <div class="screenshot-image-wrapper">
+                                <img src="../images/screenshots/3.png" alt="一括処理">
+                            </div>
+                            <div class="screenshot-caption">
+                                <h3>一括処理</h3>
+                                <p>複数ファイルを進捗表示付きで処理</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screenshot-card">
+                        <div class="screenshot-card-inner">
+                            <div class="screenshot-image-wrapper">
+                                <img src="../images/screenshots/4.png" alt="設定画面">
+                            </div>
+                            <div class="screenshot-caption">
+                                <h3>柔軟な設定</h3>
+                                <p>出力形式と品質を自由にカスタマイズ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screenshot-card">
+                        <div class="screenshot-card-inner">
+                            <div class="screenshot-image-wrapper">
+                                <img src="../images/screenshots/5.png" alt="Finder Quick Action">
+                            </div>
+                            <div class="screenshot-caption">
+                                <h3>Quick Action</h3>
+                                <p>Finderから右クリックで圧縮</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -182,5 +254,53 @@
     <footer>
         <p>&copy; 2025 SquishPic. All rights reserved.</p>
     </footer>
+
+    <script>
+    (function() {
+        const gallery = document.querySelector('.screenshot-gallery');
+        const wrapper = document.querySelector('.screenshot-gallery-wrapper');
+        const cards = document.querySelectorAll('.screenshot-card');
+        const prevBtn = document.querySelector('.screenshot-nav.prev');
+        const nextBtn = document.querySelector('.screenshot-nav.next');
+
+        if (!gallery || !wrapper) return;
+
+        const cardWidth = 280 + 32;
+        let currentIndex = 0;
+
+        function updateScrollState() {
+            const scrollLeft = gallery.scrollLeft;
+            const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+
+            wrapper.classList.remove('scroll-start', 'scroll-middle', 'scroll-end');
+
+            if (scrollLeft <= 10) {
+                wrapper.classList.add('scroll-start');
+            } else if (scrollLeft >= maxScroll - 10) {
+                wrapper.classList.add('scroll-end');
+            } else {
+                wrapper.classList.add('scroll-middle');
+            }
+
+            currentIndex = Math.round(scrollLeft / cardWidth);
+            if (prevBtn) prevBtn.disabled = scrollLeft <= 10;
+            if (nextBtn) nextBtn.disabled = scrollLeft >= maxScroll - 10;
+        }
+
+        function scrollToCard(index) {
+            if (index < 0 || index >= cards.length) return;
+            currentIndex = index;
+            gallery.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+        }
+
+        gallery.addEventListener('scroll', updateScrollState, { passive: true });
+
+        if (prevBtn) prevBtn.addEventListener('click', () => scrollToCard(currentIndex - 1));
+        if (nextBtn) nextBtn.addEventListener('click', () => scrollToCard(currentIndex + 1));
+
+        updateScrollState();
+        wrapper.classList.add('scroll-start');
+    })();
+    </script>
 </body>
 </html>
